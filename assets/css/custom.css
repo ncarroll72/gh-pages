@@ -2,190 +2,205 @@
  * Add your own Custom CSS code for clarislaw.com 
  */
 
-/* Footer Responsive Layout */
-@media all and (max-width: 56.25em) {
-  /* For stacking feed items */
-  .feed__item {
-    flex-direction: column;  /* Stack text and image vertically */
-  }
+/* ========================================
+   1) RESPONSIVE LAYOUT RULES (MEDIA QUERY)
+   ======================================== */
+   @media all and (max-width: 56.25em) { /* ~900px breakpoint */
 
-  .post__image {
-    max-width: 100%;  /* Make image take full width when stacked */
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* Fix for publish.law stacking order */
-  .publish-law .post__image {
-    order: 2;  /* Ensure image comes after the text */
-  }
-
-  .publish-law .content {
-    order: 1;  /* Ensure text comes before the image */
-  }
-
-  /* Footer Layout Stacking */
-  .footer__content {
-    flex-direction: column;  /* Stacks items in a single column */
-    align-items: center;      /* Centers the content */
-  }
-
-  .two-column {
-    flex-direction: column;   /* Ensure the two-column content stacks vertically */
-  }
-
-  .footer__text, 
-  .form-basin {
-    max-width: 100%;          /* Both elements take full width when stacked */
-    margin-bottom: 1.5rem;    /* Add space between the text and form */
-    flex: 1 1 100%;           /* Ensure both sections take full width */
-  }
-}
-
-
-
-
-
+    /* For stacking feed items */
+    .feed__item {
+      flex-direction: column;  /* Stack text and image vertically */
+    }
   
-
- /* 
- * Add your own Custom CSS code for clarislaw.com 
- */ 
-
-h4.h4-home {
-  margin-top: calc(var(--baseline)* 1 + 1vw);
-}
-
-h2.h2-home {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 0.5em;
-}
-
-h1 {
-  margin-top: calc(var(--baseline)* 1 + 1vw);
-}
-
-/* Global button style for all buttons with class 'btn' */
-.btn {
-  background-color: #0073e6;  /* Blue background */
-  color: white;  /* White text */
-  padding: 0.6rem 1.5rem;  /* Padding for a better size */
-  border: none;  /* Remove border */
-  border-radius: 30px;  /* More rounded corners */
-  font-size: .9rem;  /* Adjust font size */
-  text-transform: uppercase;  /* Make text uppercase for emphasis */
-  cursor: pointer;  /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth hover transition */
-}
-
-/* Hover effect for all buttons */
-.btn:hover {
-  background-color: #005bb5;  /* Darker blue on hover */
-  transform: scale(1.05);  /* Slightly enlarge on hover */
-}
-
-/* Center all buttons within their containers */
-.button-container {
-  display: flex;
-  justify-content: center;  /* Centers buttons horizontally */
-  align-items: center;      /* Centers buttons vertically if needed */
-  margin-top: 2rem;         /* Add space above buttons */
-  text-align: center;       /* Ensure the text is centered */
-  margin-bottom: 2rem; 
-}
-
-/* Divider between sections */
-.section-divider {
-  border: none;
-  border-top: 1px solid #e0e0e0;  /* Light gray color for subtle separation */
-  margin: 2rem 0;  /* Space above and below the divider */
-  width: 100%;
-}
-
-hr::before,
-.separator::before {
-  content: none; /* Remove the dots */
-}
-
-:root {
-  --link-color: #0073e6;           /* Modern blue link */
-  --link-color-hover: #005bb5;     /* Slightly darker blue on hover */
-  --link-color-visited: #6b47b2;   /* Muted purple for visited links */
-}
-
-/* Glossary Link Styles with normal weight */
-a.glossary-link {
-  font-weight: 400;  /* Normal weight */
-  text-decoration: underline; /* Underline to emphasize it's a link */
-  color: #e63946;  /* Red color for glossary links */
-  transition: color 0.3s ease;
-}
-
-a.glossary-link:hover {
-  color: #d62828;  /* Darker red on hover */
-}
-
-a.glossary-link:visited {
-  color: #9b2226;  /* Muted red for visited glossary links */
-}
-
-
-
-/* Glossary Item Styles */
-.glossary-item {
-  background-color: #fdfdfd; /* Lighter background for a clean look */
-  border-left: 4px solid #0073e6; /* Link color as accent */
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 4px; /* Slight rounding */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); /* Light shadow for subtle depth */
-  max-width: 1000px; /* Limit width for readability */
-  margin-left: auto; /* Center block */
-  margin-right: auto;
-}
-
-/* Glossary Term Styles */
-.glossary-term {
-  font-size: 1.4rem; /* Moderate size for term */
-  font-weight: 700; /* Stronger emphasis */
-  color: #17181E; /* Neutral, non-link color */
-  margin-bottom: 10px;
-  margin-top: 10px; /* Reduced margin above heading */
-  text-align: left; /* Align text to the left */
-}
-
-/* Definition Text */
-.glossary-definition {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* Example Text */
-.glossary-example {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #555;
-  font-style: italic;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-}
-
-/* Responsive Layout Adjustments */
-@media (max-width: 768px) {
+    .post__image {
+      max-width: 100%;         /* Make image take full width when stacked */
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    /* Fix for publish.law stacking order */
+    .publish-law .post__image {
+      order: 2;                /* Ensure image comes after the text */
+    }
+    .publish-law .content {
+      order: 1;                /* Ensure text comes before the image */
+    }
+  
+    /* COMMENT OUT this if you don't want your entire footer stacked
+       .footer__content {
+          flex-direction: column;
+          align-items: center;
+       }
+    */
+  
+    .two-column {
+      flex-direction: column;  /* Ensure the two-column content stacks vertically */
+    }
+  
+    .footer__text, 
+    .form-basin {
+      max-width: 100%;         /* Both elements take full width when stacked */
+      margin-bottom: 1.5rem;   /* Add space between the text and form */
+      flex: 1 1 100%;          /* Ensure both sections take full width */
+    }
+  }
+  
+  
+  /* ========================================
+     2) NEW FOOTER-COLUMNS RULES
+     ======================================== */
+  /* By default, display side by side on large screens */
+  .footer-columns {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* On smaller screens, stack them */
+  @media (max-width: 56.25em) {
+    .footer-columns {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  
+  /* ========================================
+     3) HEADINGS, BUTTONS, ETC.
+     (unchanged from your original code)
+     ======================================== */
+  
+  h4.h4-home {
+    margin-top: calc(var(--baseline)* 1 + 1vw);
+  }
+  
+  h2.h2-home {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0.5em;
+  }
+  
+  h1 {
+    margin-top: calc(var(--baseline)* 1 + 1vw);
+  }
+  
+  /* Global button style for all buttons with class 'btn' */
+  .btn {
+    background-color: #0073e6;  /* Blue background */
+    color: white;               /* White text */
+    padding: 0.6rem 1.5rem;     /* Padding for a better size */
+    border: none;               /* Remove border */
+    border-radius: 30px;        /* More rounded corners */
+    font-size: .9rem;           /* Adjust font size */
+    text-transform: uppercase;  /* Make text uppercase for emphasis */
+    cursor: pointer;            /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth hover transition */
+  }
+  
+  /* Hover effect for all buttons */
+  .btn:hover {
+    background-color: #005bb5;  /* Darker blue on hover */
+    transform: scale(1.05);     /* Slightly enlarge on hover */
+  }
+  
+  /* Center all buttons within their containers */
+  .button-container {
+    display: flex;
+    justify-content: center;  /* Centers buttons horizontally */
+    align-items: center;      /* Centers buttons vertically if needed */
+    margin-top: 2rem;         /* Add space above buttons */
+    text-align: center;       /* Ensure the text is centered */
+    margin-bottom: 2rem; 
+  }
+  
+  /* Divider between sections */
+  .section-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;  /* Light gray color for subtle separation */
+    margin: 2rem 0;  /* Space above and below the divider */
+    width: 100%;
+  }
+  
+  hr::before,
+  .separator::before {
+    content: none; /* Remove the dots */
+  }
+  
+  :root {
+    --link-color: #0073e6;           /* Modern blue link */
+    --link-color-hover: #005bb5;     /* Slightly darker blue on hover */
+    --link-color-visited: #6b47b2;   /* Muted purple for visited links */
+  }
+  
+  /* Glossary Link Styles with normal weight */
+  a.glossary-link {
+    font-weight: 400;                /* Normal weight */
+    text-decoration: underline;      /* Underline to emphasize it's a link */
+    color: #e63946;                  /* Red color for glossary links */
+    transition: color 0.3s ease;
+  }
+  
+  a.glossary-link:hover {
+    color: #d62828;                  /* Darker red on hover */
+  }
+  
+  a.glossary-link:visited {
+    color: #9b2226;                  /* Muted red for visited glossary links */
+  }
+  
+  /* Glossary Item Styles */
   .glossary-item {
-      padding: 15px;
-      max-width: 95%; /* Shrink width on mobile */
-      margin-left: 5%; /* Ensure it's not too close to the edges */
-      margin-right: 5%;
+    background-color: #fdfdfd; /* Lighter background for a clean look */
+    border-left: 4px solid #0073e6; /* Link color as accent */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px; /* Slight rounding */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); /* Light shadow for subtle depth */
+    max-width: 1000px; /* Limit width for readability */
+    margin-left: auto; /* Center block */
+    margin-right: auto;
   }
+  
+  /* Glossary Term Styles */
   .glossary-term {
-      font-size: 1.2rem;
+    font-size: 1.4rem; /* Moderate size for term */
+    font-weight: 700;  /* Stronger emphasis */
+    color: #17181E;    /* Neutral, non-link color */
+    margin-bottom: 10px;
+    margin-top: 10px;  /* Reduced margin above heading */
+    text-align: left;  /* Align text to the left */
   }
-  .glossary-definition, .glossary-example {
-      font-size: 0.95rem;
+  
+  /* Definition Text */
+  .glossary-definition {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 10px;
   }
-}
-
+  
+  /* Example Text */
+  .glossary-example {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  /* Responsive Layout Adjustments for Glossary */
+  @media (max-width: 768px) {
+    .glossary-item {
+        padding: 15px;
+        max-width: 95%; /* Shrink width on mobile */
+        margin-left: 5%; /* Ensure it's not too close to the edges */
+        margin-right: 5%;
+    }
+    .glossary-term {
+        font-size: 1.2rem;
+    }
+    .glossary-definition, .glossary-example {
+        font-size: 0.95rem;
+    }
+  }
+  
