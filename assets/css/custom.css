@@ -244,3 +244,15 @@
     text-align: center; /* or left if you prefer; your choice */
   }
 }
+
+
+/* ---------------------------------------------
+   7) DARK MODE OVERRIDE FOR IMAGE-FOOTNOTE
+--------------------------------------------- */
+/* If the user’s device is set to dark mode, override text color
+   to ensure better contrast on dark backgrounds. */
+   @media (prefers-color-scheme: dark) {
+    .image-footnote {
+      color: #ddd; /* or #fafafa, #eee, etc. */
+    }
+  }
