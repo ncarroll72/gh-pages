@@ -107,16 +107,17 @@
   .project-block {
     display: flex;
     gap: 20px;
-    margin-top: 1rem;
+    margin-top: 0rem;
     padding-left: 20px;
   }
   
   .project-text {
-    flex: 2.0; /* Thinner text column */
+    flex: 2.0; /* Twider text column */
   }
   
   .project-image {
-    flex: 1.5; /* Wider image column */
+    flex: 1.5; /* Thinner image column */
+    margin-top: 4rem;
   }
   .project-image img {
     width: 100%;
