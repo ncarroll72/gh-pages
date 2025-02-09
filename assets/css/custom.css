@@ -176,27 +176,30 @@
      FOOTER SECTION: Two-Column Layout
   --------------------------------------------- */
   .footer-section {
-    margin-top: 3rem; /* space above the footer section */
+    margin-top: 0rem; /* space above the footer section */
     text-align: center; /* centers the .footer-heading */
   }
   
   .footer-heading {
-    margin: 0;
-    text-align: center;
-  }
+    max-width: 600px;  /* Limits the width so it wraps sooner */
+    width: 80%;  /* Keeps it flexible */
+    margin: 0 auto;  /* Centers the block itself */
+    text-align: center; /* Ensures the text is centered within the block */
+    display: block; /* Ensures it's treated as a block element */
+}
   
   /* The flex container for the two columns */
   .footer-columns {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-top: 0;
   }
   
   /* Left text column in the footer */
   .footer-text {
     flex: 1;
-    padding: 2em;
+    padding: 2em 2em 0em 2em;
     box-sizing: border-box;
     text-align: left; /* if you want the text left-aligned in the footer */
   }
