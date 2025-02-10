@@ -139,7 +139,7 @@
   }
   
   .project-image {
-    flex: 1.5; /* Thinner image column */
+    flex: 1.25; /* Thinner image column */
     margin-top: 2rem; 
     margin-bottom: 0rem;
   }
