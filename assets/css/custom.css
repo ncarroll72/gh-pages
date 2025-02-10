@@ -73,7 +73,7 @@
      For a custom horizontal rule between sections
   --------------------------------------------- */
   .divider-block {
-    margin: 2rem 0;
+    margin: 3rem 0 1rem;
     text-align: center;
   }
   .divider-block .section-divider {
@@ -122,9 +122,16 @@
   --------------------------------------------- */
   .project-block {
     display: flex;
-    gap: 20px;
+    gap: 2rem;
     margin-top: 0rem;
-    padding-left: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .centered-title {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 0rem;
   }
   
   .project-text {
@@ -133,7 +140,8 @@
   
   .project-image {
     flex: 1.5; /* Thinner image column */
-    margin-top: 4rem;
+    margin-top: 2rem; 
+    margin-bottom: 0rem;
   }
   .project-image img {
     width: 100%;
@@ -162,11 +170,11 @@
     .project-block {
       flex-direction: column;
     }
-    .project-text {
-      order: 1;
-      width: 100%;
-    }
     .project-image {
+        order: 1;
+        width: 100%;
+      }
+    .project-text {
       order: 2;
       width: 100%;
     }
