@@ -10,7 +10,7 @@
 --------------------------------------------- */
 .hero-block {
     text-align: center;
-    margin: 2em auto;
+    margin: 2em auto 3em;
     max-width: 800px;
     width: 90%;
   }
@@ -91,15 +91,31 @@
      A simple centered heading before projects
   --------------------------------------------- */
   .intro-heading {
-    margin: 2em auto;
-    text-align: center;
-    max-width: 800px;
-    width: 90%;
+    background-color: #0073E6;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 3rem 0;
+    /* Even if we set color here... */
+    /* color: #FFFFFF;  <-- it may be overridden by the theme's h2 styling */
   }
   
-  .intro-heading h2 {
-    margin-top: 1.7em;
+  .intro-heading-content {
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: center;
+    width: 80%;
   }
+  
+  /* Force the H2 text to be white, overriding the theme’s H2 rule */
+  .intro-heading h2 {
+    color: #ffffff !important;
+    margin: 0;
+  }
+  
+  
+  
   
   /* ---------------------------------------------
      5) PROJECT BLOCKS (Two-Column Layout)
