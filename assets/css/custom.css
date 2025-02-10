@@ -105,7 +105,7 @@
     margin: 0 auto;
     padding: 1rem 0;
     text-align: center;
-    width: 80%;
+    width: 65%;
   }
   
   /* Force the H2 text to be white, overriding the theme’s H2 rule */
@@ -151,9 +151,7 @@
   /* Utility class for subheadings (centered + margins) */
   .centered-subheading {
     text-align: center;
-    margin-top: 1.2em;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: 1.2rem 15%;
   }
   
   /* Spacing for button container in the project text */
