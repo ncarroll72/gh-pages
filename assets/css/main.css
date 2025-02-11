@@ -341,7 +341,7 @@ button {
   align-items: center;
   background: none;
   border: 1px solid var(--dark);
-  border-radius: calc(var(--border-radius)* 10);
+  border-radius: calc(var(--border-radius) * 10);
   color: var(--dark);
   cursor: pointer;
   display: inline-flex;

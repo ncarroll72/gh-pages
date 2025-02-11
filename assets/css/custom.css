@@ -13,41 +13,41 @@
     margin: 2em auto 3em;
     max-width: 800px;
     width: 90%;
-  }
-  
-  .hero-block h1 {
+}
+
+.hero-block h1 {
     font-size: clamp(2rem, 2rem + 1.8 * (100vw - 20rem) / 70, 4rem);
     margin-top: calc(var(--baseline) * 1 + 1vw);
     padding-bottom: 0.6em;
-  }
-  
-  /* Special Keyword (e.g. "PubTech") styling */
-  .hero-keyword {
+}
+
+/* Special Keyword (e.g. "PubTech") styling */
+.hero-keyword {
     color: #0073e6;
     font-weight: bold;
     text-decoration: underline;
-  }
-  
-  /* Extra space between consecutive paragraphs, if desired */
-  .hero-block p + p {
+}
+
+/* Extra space between consecutive paragraphs, if desired */
+.hero-block p + p {
     margin-top: 1em;
-  }
-  
-  /* Spacing above the button container in the hero */
-  .hero-block .button-container {
+}
+
+/* Spacing above the button container in the hero */
+.hero-block .button-container {
     margin-top: 2em;
-  }
-  
-  /* ---------------------------------------------
-     2) BUTTON OVERRIDES (Hero + Project Blocks)
-  --------------------------------------------- */
-  /* 
-     Now also includes .footer-form .btn for the 
-     SEND button in the footer.
-  */
-  .hero-block .btn,
-  .project-block .btn,
-  .footer-form .btn {
+}
+
+/* ---------------------------------------------
+   2) BUTTON OVERRIDES (Hero + Project Blocks)
+--------------------------------------------- */
+/* 
+   Now also includes .footer-form .btn for the 
+   SEND button in the footer.
+*/
+.hero-block .btn,
+.project-block .btn,
+.footer-form .btn {
     background-color: #0073e6; /* Blue background */
     color: #ffffff;            /* White text */
     text-transform: uppercase; /* All caps */
@@ -56,41 +56,41 @@
     padding: 0.6rem 1.5rem;    /* Larger padding for a better shape */
     transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;           /* pointer for clarity */
-  }
-  
-  .hero-block .btn:hover,
-  .hero-block .btn:focus,
-  .project-block .btn:hover,
-  .project-block .btn:focus,
-  .footer-form .btn:hover,
-  .footer-form .btn:focus {
+}
+
+.hero-block .btn:hover,
+.hero-block .btn:focus,
+.project-block .btn:hover,
+.project-block .btn:focus,
+.footer-form .btn:hover,
+.footer-form .btn:focus {
     background-color: #005bb5;
     transform: scale(1.05);
-  }
-  
-  /* ---------------------------------------------
-     3) DIVIDER BLOCK
-     For a custom horizontal rule between sections
-  --------------------------------------------- */
-  .divider-block {
+}
+
+/* ---------------------------------------------
+   3) DIVIDER BLOCK
+   For a custom horizontal rule between sections
+--------------------------------------------- */
+.divider-block {
     margin: 3rem 0 1rem;
     text-align: center;
-  }
-  .divider-block .section-divider {
+}
+.divider-block .section-divider {
     border: none;
     border-top: 1px solid #e0e0e0;
     margin: 0 auto;
     width: 50%;
-  }
-  .divider-block .section-divider::before {
+}
+.divider-block .section-divider::before {
     content: none !important;
-  }
-  
-  /* ---------------------------------------------
-     4) INTRO HEADING BLOCK
-     A simple centered heading before projects
-  --------------------------------------------- */
-  .intro-heading {
+}
+
+/* ---------------------------------------------
+   4) INTRO HEADING BLOCK
+   A simple centered heading before projects
+--------------------------------------------- */
+.intro-heading {
     background-color: #0073E6;
     position: relative;
     width: 100vw;
@@ -99,150 +99,147 @@
     padding: 3rem 0;
     /* Even if we set color here... */
     /* color: #FFFFFF;  <-- it may be overridden by the theme's h2 styling */
-  }
-  
-  .intro-heading-content {
+}
+
+.intro-heading-content {
     margin: 0 auto;
     padding: 1rem 0;
     text-align: center;
     width: 65%;
-  }
-  
-  /* Force the H2 text to be white, overriding the theme’s H2 rule */
-  .intro-heading h2 {
+}
+
+/* Force the H2 text to be white, overriding the theme’s H2 rule */
+.intro-heading h2 {
     color: #ffffff !important;
     margin: 0;
-  }
-  
-  
-  
-  
-  /* ---------------------------------------------
-     5) PROJECT BLOCKS (Two-Column Layout)
-  --------------------------------------------- */
-  .project-block {
+}
+
+/* ---------------------------------------------
+   5) PROJECT BLOCKS (Two-Column Layout)
+--------------------------------------------- */
+.project-block {
     display: flex;
     gap: 2rem;
     margin-top: 0rem;
     padding-left: 2rem;
     padding-right: 2rem;
-  }
+}
 
-  .centered-title {
+.centered-title {
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 0rem;
-  }
-  
-  .project-text {
-    flex: 2.0; /* Twider text column */
-  }
-  
-  .project-image {
+}
+
+.project-text {
+    flex: 2.0; /* Wider text column */
+}
+
+.project-image {
     flex: 1.25; /* Thinner image column */
     margin-top: 2rem; 
     margin-bottom: 0rem;
-  }
-  .project-image img {
+}
+.project-image img {
     width: 100%;
     height: auto;
-  }
-  
-  /* Utility class for subheadings (centered + margins) */
-  .centered-subheading {
+}
+
+/* Utility class for subheadings (centered + margins) */
+.centered-subheading {
     text-align: center;
     margin: 1.2rem 15%;
-  }
-  
-  /* Spacing for button container in the project text */
-  .project-text .button-container {
+}
+
+/* Spacing for button container in the project text */
+.project-text .button-container {
     margin-top: 2em;
     text-align: center; 
+}
+
+/* ---------------------------------------------
+   6) RESPONSIVE COLLAPSE FOR PROJECT BLOCKS
+--------------------------------------------- */
+/* Force text on top, image below at <= ~900px */
+@media (max-width: 56.25em) {
+  .project-block {
+    flex-direction: column;
   }
-  
-  /* ---------------------------------------------
-     6) RESPONSIVE COLLAPSE FOR PROJECT BLOCKS
-  --------------------------------------------- */
-  /* Force text on top, image below at <= ~900px */
-  @media (max-width: 56.25em) {
-    .project-block {
-      flex-direction: column;
-    }
-    .project-image {
-        order: 1;
-        width: 100%;
-      }
-    .project-text {
-      order: 2;
+  .project-image {
+      order: 1;
       width: 100%;
     }
+  .project-text {
+    order: 2;
+    width: 100%;
   }
-  
-  /* ---------------------------------------------
-     IMAGE FOOTNOTE (Limited Availability Note)
-  --------------------------------------------- */
-  .image-footnote {
+}
+
+/* ---------------------------------------------
+   IMAGE FOOTNOTE (Limited Availability Note)
+--------------------------------------------- */
+.image-footnote {
     font-size: 0.85em;
     font-style: italic;
     margin-top: 1em;
     line-height: 1.4;
     color: #333;
-  }
-  .image-footnote strong {
+}
+.image-footnote strong {
     font-style: normal;
     display: inline-block;
     margin-bottom: 0.2em;
-  }
-  
-  /* ---------------------------------------------
-     FOOTER SECTION: Two-Column Layout
-  --------------------------------------------- */
-  .footer-section {
+}
+
+/* ---------------------------------------------
+   FOOTER SECTION: Two-Column Layout
+--------------------------------------------- */
+.footer-section {
     margin-top: 0rem; /* space above the footer section */
     text-align: center; /* centers the .footer-heading */
-  }
-  
-  .footer-heading {
-    max-width: 600px;  /* Limits the width so it wraps sooner */
-    width: 80%;  /* Keeps it flexible */
-    margin: 0 auto;  /* Centers the block itself */
-    text-align: center; /* Ensures the text is centered within the block */
-    display: block; /* Ensures it's treated as a block element */
 }
-  
-  /* The flex container for the two columns */
-  .footer-columns {
+
+.footer-heading {
+    max-width: 600px;  /* Limits the width so it wraps sooner */
+    width: 80%;        /* Keeps it flexible */
+    margin: 0 auto;    /* Centers the block itself */
+    text-align: center; /* Ensures the text is centered within the block */
+    display: block;    /* Ensures it's treated as a block element */
+}
+
+/* The flex container for the two columns */
+.footer-columns {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     margin-top: 0;
-  }
-  
-  /* Left text column in the footer */
-  .footer-text {
+}
+
+/* Left text column in the footer */
+.footer-text {
     flex: 1;
     padding: 2em 2em 0em 2em;
     box-sizing: border-box;
     text-align: left; /* if you want the text left-aligned in the footer */
-  }
-  
-  /* Right form column in the footer */
-  .footer-form {
+}
+
+/* Right form column in the footer */
+.footer-form {
     flex: 1.2;
     padding: 2em;
     box-sizing: border-box;
-  }
-  
-  /* Right-align labels, fill entire width for inputs/textarea */
-  .footer-form form label {
+}
+
+/* Right-align labels, fill entire width for inputs/textarea */
+.footer-form form label {
     display: block;
     text-align: left;  
     margin-bottom: 0.3rem;
     font-weight: 600;
-  }
-  
-  .footer-form form input,
-  .footer-form form textarea {
+}
+
+.footer-form form input,
+.footer-form form textarea {
     width: 100%;
     margin-bottom: 1rem; 
     padding: 0.6rem;
@@ -251,34 +248,42 @@
     border-radius: 4px;
     box-sizing: border-box;
     transition: border-color 0.3s;
-  }
-  
-  /* Center the SEND button horizontally in the form */
-  .footer-form form button {
+}
+
+/* Center the SEND button horizontally in the form */
+.footer-form form button {
     display: block;
     margin: 0.5rem auto 0; 
+}
+
+/* Collapse the footer columns on smaller screens */
+@media (max-width: 56.25em) {
+  .footer-columns {
+    flex-direction: column;
   }
-  
-  /* Collapse the footer columns on smaller screens */
-  @media (max-width: 56.25em) {
-    .footer-columns {
-      flex-direction: column;
-    }
-    .footer-text,
-    .footer-form {
-      width: 100%;
-      text-align: center; /* or left if you prefer; your choice */
-    }
+  .footer-text,
+  .footer-form {
+    width: 100%;
+    text-align: center; /* or left if you prefer; your choice */
   }
-  
-  
-  /* ---------------------------------------------
-     7) DARK MODE OVERRIDE FOR IMAGE-FOOTNOTE
-  --------------------------------------------- */
-  /* If the user’s device is set to dark mode, override text color
-     to ensure better contrast on dark backgrounds. */
-     @media (prefers-color-scheme: dark) {
-      .image-footnote {
-        color: #ddd; /* or #fafafa, #eee, etc. */
-      }
-    }
+}
+
+/* ---------------------------------------------
+   7) DARK MODE OVERRIDE FOR IMAGE-FOOTNOTE
+--------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  .image-footnote {
+    color: #ddd; /* or #fafafa, #eee, etc. */
+  }
+}
+
+/* ---------------------------------------------
+   8) FOOTER TEXT PARAGRAPH MARGIN TWEAK
+   Shrink the top margin of paragraphs in .footer-text
+--------------------------------------------- */
+.footer-text p {
+  margin-top: 0; /* Remove or reduce top margin */
+  /* If you want less bottom space, you can also adjust:
+     margin-bottom: 0.5em;
+  */
+}
