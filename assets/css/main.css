@@ -2190,3 +2190,7 @@ textarea {
   -webkit-transform: none;
           transform: none;
 }
+
+body {
+  background-color: red !important;
+}
