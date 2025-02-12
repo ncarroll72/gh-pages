@@ -1,0 +1,10 @@
+assets/css/*.css  text/plain linguist-language=CSS export-ignore
+assets/js/*.js  text/plain linguist-language=JavaScript export-ignore
+assets/fonts/*.woff2  binary linguist-generated export-ignore
+assets/fonts/*.woff  binary linguist-generated export-ignore
+
+# Force GitHub Pages to treat assets as static files
+*.css text eol=lf
+*.js text eol=lf
+*.woff2 binary
+*.woff binary
