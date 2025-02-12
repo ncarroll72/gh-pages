@@ -48,7 +48,7 @@
 .hero-block .btn,
 .project-block .btn,
 .footer-form .btn {
-    background-color: #ffffff; /* Blue background */
+    background-color: #0073e6; /* Blue background */
     color: #ffffff;            /* White text */
     text-transform: uppercase; /* All caps */
     border: none;              /* Remove default border */
