@@ -1,13 +1,37 @@
 /* ==============================================
-   Custom CSS for Claris Law
+   1) ROOT VARIABLES
+   ----------------------------------------------
+   Central place to store color definitions and
+   other global tokens (font sizes, spacings, etc.)
+============================================== */
+:root {
+    --hero-keyword-color: #0073e6;  /* Highlight color for special keywords */
+    
+    --button-bg-color: #0073e6;     /* Primary button background */
+    --button-text-color: #ffffff;   /* Primary button text */
+    --button-bg-hover: #005bb5;     /* Button background on hover/focus */
+    --button-text-hover: #ffffff;   /* Button text on hover/focus (currently same as normal) */
+
+    --intro-heading-text-color: #ffffff;  /* Intro heading text color */
+    --intro-background-color: #0073e6;    /* Intro heading background */
+    
+    --footnote-text-color: #333;    /* Text color for footnotes */
+    
+    /* Additional optional variables (remove if you don’t need them) */
+    --divider-color: #e0e0e0;       /* Divider line color */
+    --input-border-color: #ccc;     /* Default input border */
+    --footnote-text-color-dark: #ddd; /* Dark-mode footnote text color */
+    
+    /* Example spacing variable (if needed for margin-top calculation) */
+    /* --baseline: 1rem; */
+}
+
+/* ==============================================
+   2) HERO BLOCK (Heading, Intro Text & CTA)
    ----------------------------------------------
    Extends/overrides main.css for homepage 
-   elements or other custom styling.
+   hero section (H1, paragraphs, CTA button).
 ============================================== */
-
-/* ---------------------------------------------
-   1) HERO BLOCK (Heading, Intro Text & CTA)
---------------------------------------------- */
 .hero-block {
     text-align: center;
     margin: 2em auto 3em;
@@ -17,13 +41,17 @@
 
 .hero-block h1 {
     font-size: clamp(2rem, 2rem + 1.8 * (100vw - 20rem) / 70, 4rem);
+    /* 
+       If you have a --baseline defined, uncomment:
+       margin-top: calc(var(--baseline) * 1 + 1vw);
+    */
     margin-top: calc(var(--baseline) * 1 + 1vw);
     padding-bottom: 0.6em;
 }
 
 /* Special Keyword (e.g. "PubTech") styling */
 .hero-keyword {
-    color: #0073e6;
+    color: var(--hero-keyword-color);
     font-weight: bold;
     text-decoration: underline;
 }
@@ -38,24 +66,23 @@
     margin-top: 2em;
 }
 
-/* ---------------------------------------------
-   2) BUTTON OVERRIDES (Hero + Project Blocks)
---------------------------------------------- */
-/* 
-   Now also includes .footer-form .btn for the 
+/* ==============================================
+   3) BUTTON OVERRIDES (Hero + Project Blocks)
+   ----------------------------------------------
+   Also includes .footer-form .btn for the 
    SEND button in the footer.
-*/
+============================================== */
 .hero-block .btn,
 .project-block .btn,
 .footer-form .btn {
-    background-color: #0073e6; /* Blue background */
-    color: #ffffff;            /* White text */
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     text-transform: uppercase; /* All caps */
-    border: none;              /* Remove default border */
-    border-radius: 30px;       /* Rounded corners */
-    padding: 0.6rem 1.5rem;    /* Larger padding for a better shape */
+    border: none;             /* Remove default border */
+    border-radius: 30px;      /* Rounded corners */
+    padding: 0.6rem 1.5rem;   /* Larger padding for a better shape */
     transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;           /* pointer for clarity */
+    cursor: pointer;          /* pointer for clarity */
 }
 
 .hero-block .btn:hover,
@@ -64,21 +91,23 @@
 .project-block .btn:focus,
 .footer-form .btn:hover,
 .footer-form .btn:focus {
-    background-color: #005bb5;
+    background-color: var(--button-bg-hover);
+    color: var(--button-text-hover);
     transform: scale(1.05);
 }
 
-/* ---------------------------------------------
-   3) DIVIDER BLOCK
-   For a custom horizontal rule between sections
---------------------------------------------- */
+/* ==============================================
+   4) DIVIDER BLOCK
+   ----------------------------------------------
+   Custom horizontal rule between sections
+============================================== */
 .divider-block {
     margin: 3rem 0 1rem;
     text-align: center;
 }
 .divider-block .section-divider {
     border: none;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--divider-color);
     margin: 0 auto;
     width: 50%;
 }
@@ -86,22 +115,22 @@
     content: none !important;
 }
 
-/* ---------------------------------------------
-   4) INTRO HEADING BLOCK
+/* ==============================================
+   5) INTRO HEADING BLOCK
+   ----------------------------------------------
    A simple centered heading before projects
---------------------------------------------- */
+============================================== */
 .intro-heading {
-    background-color: #0073E6;
+    background-color: var(--intro-background-color);
     position: relative;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding: 3rem 0;
     min-height: 200px;
-    /* Even if we set color here... */
-    /* color: #FFFFFF;  <-- it may be overridden by the theme's h2 styling */
 }
 
+/* Container inside the intro heading */
 .intro-heading-content {
     margin: 0 auto;
     padding: 1rem 0;
@@ -111,13 +140,13 @@
 
 /* Force the H2 text to be white, overriding the theme’s H2 rule */
 .intro-heading h2 {
-    color: #ffffff !important;
+    color: var(--intro-heading-text-color) !important;
     margin: 0;
 }
 
-/* ---------------------------------------------
-   5) PROJECT BLOCKS (Two-Column Layout)
---------------------------------------------- */
+/* ==============================================
+   6) PROJECT BLOCKS (Two-Column Layout)
+============================================== */
 .project-block {
     display: flex;
     gap: 2rem;
@@ -141,6 +170,7 @@
     margin-top: 2rem; 
     margin-bottom: 0rem;
 }
+
 .project-image img {
     width: 100%;
     height: auto;
@@ -158,33 +188,32 @@
     text-align: center; 
 }
 
-/* ---------------------------------------------
-   6) RESPONSIVE COLLAPSE FOR PROJECT BLOCKS
---------------------------------------------- */
-/* Force text on top, image below at <= ~900px */
+/* ==============================================
+   7) RESPONSIVE COLLAPSE FOR PROJECT BLOCKS
+============================================== */
 @media (max-width: 56.25em) {
   .project-block {
     flex-direction: column;
   }
   .project-image {
-      order: 1;
-      width: 100%;
-    }
+    order: 1;
+    width: 100%;
+  }
   .project-text {
     order: 2;
     width: 100%;
   }
 }
 
-/* ---------------------------------------------
-   IMAGE FOOTNOTE (Limited Availability Note)
---------------------------------------------- */
+/* ==============================================
+   8) IMAGE FOOTNOTE (Limited Availability Note)
+============================================== */
 .image-footnote {
     font-size: 0.85em;
     font-style: italic;
     margin-top: 1em;
     line-height: 1.4;
-    color: #333;
+    color: var(--footnote-text-color);
 }
 .image-footnote strong {
     font-style: normal;
@@ -192,9 +221,9 @@
     margin-bottom: 0.2em;
 }
 
-/* ---------------------------------------------
-   FOOTER SECTION: Two-Column Layout
---------------------------------------------- */
+/* ==============================================
+   9) FOOTER SECTION: Two-Column Layout
+============================================== */
 .footer-section {
     margin-top: 0rem; /* space above the footer section */
     text-align: center; /* centers the .footer-heading */
@@ -221,7 +250,7 @@
     flex: 1;
     padding: 2em 2em 0em 2em;
     box-sizing: border-box;
-    text-align: left; /* if you want the text left-aligned in the footer */
+    text-align: left;
 }
 
 /* Right form column in the footer */
@@ -245,7 +274,7 @@
     margin-bottom: 1rem; 
     padding: 0.6rem;
     font-family: inherit;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border-color);
     border-radius: 4px;
     box-sizing: border-box;
     transition: border-color 0.3s;
@@ -265,23 +294,22 @@
   .footer-text,
   .footer-form {
     width: 100%;
-    text-align: center; /* or left if you prefer; your choice */
+    text-align: center; /* or left if you prefer */
   }
 }
 
-/* ---------------------------------------------
-   7) DARK MODE OVERRIDE FOR IMAGE-FOOTNOTE
---------------------------------------------- */
+/* ==============================================
+   10) DARK MODE OVERRIDE FOR IMAGE-FOOTNOTE
+============================================== */
 @media (prefers-color-scheme: dark) {
   .image-footnote {
-    color: #ddd; /* or #fafafa, #eee, etc. */
+    color: var(--footnote-text-color-dark); 
   }
 }
 
-/* ---------------------------------------------
-   8) FOOTER TEXT PARAGRAPH MARGIN TWEAK
-   Shrink the top margin of paragraphs in .footer-text
---------------------------------------------- */
+/* ==============================================
+   11) FOOTER TEXT PARAGRAPH MARGIN TWEAK
+============================================== */
 .footer-text p {
   margin-top: 0; /* Remove or reduce top margin */
   /* If you want less bottom space, you can also adjust:
