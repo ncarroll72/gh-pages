@@ -1,0 +1,99 @@
+/* 🔹 Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 1.0em;
+}
+
+/* 🔹 Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 🔹 Headers */
+h1 {
+    font-size: 1.75em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Section Styling */
+section {
+    padding: 10px 0; /* Keeps consistent internal spacing */
+    margin-bottom: 20px; /* ✅ Fixes uneven gaps between sections */
+}
+
+/* 🔹 Section Dividers */
+.section-divider {
+    border-bottom: 2px solid #0078D4;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* 🔹 Uniform Box Styling (Applies to All List Items) */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #0078D4;
+    word-wrap: break-word;
+}
+
+/* 🔹 Label Styling (Now Black & Bold) */
+.label {
+    color: #000; /* Changed from green to black */
+    font-weight: bold;
+}
+
+/* 🔹 Hover Effect */
+ul li:hover {
+    background: #fafafa;
+}
+
+/* 🔹 Links */
+a {
+    color: #0078D4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Make Header Match Sections */
+header {
+    display: block; /* Ensures it's treated like a section */
+    padding: 10px 0; /* ✅ Matches section padding */
+    margin-bottom: 20px; /* ✅ Ensures spacing is the same */
+}
+
+/* 🔹 Footer */
+#footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
